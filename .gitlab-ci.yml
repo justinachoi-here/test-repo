@@ -7,18 +7,26 @@ build-job:
   stage: build
   script:
     - echo "Building the app"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
 
 test-job1:
   stage: test
   script:
     - echo "Testing the app"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
 
 test-job-2:
   stage: test
   script:
     - echo "Testing the app 2"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
 
 deploy-prod:
   stage: deploy
   script:
     - echo "Deploying to production server"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
