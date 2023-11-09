@@ -7,26 +7,18 @@ build-job:
   stage: build
   script:
     - echo "Building the app"
-  only:
-    - master
 
 test-job1:
   stage: test
   script:
     - echo "Testing the app"
-  only:
-    - master
 
 test-job-2:
   stage: test
   script:
     - echo "Testing the app 2"
-  only:
-    - master
 
 deploy-prod:
   stage: deploy
   script:
     - echo "Deploying to production server"
-  only:
-    - master
