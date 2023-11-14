@@ -24,6 +24,8 @@ test-job-2:
   stage: test
   script:
     - echo "Testing the app 2"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
 
 deploy-prod:
   stage: deploy
