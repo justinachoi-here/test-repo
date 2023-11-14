@@ -14,11 +14,15 @@ build-job:
   stage: build
   script:
     - echo "Building the app"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 test-job1:
   stage: test
   script:
     - echo "Testing the app"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 test-job-2:
   stage: test
